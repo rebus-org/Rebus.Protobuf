@@ -1,4 +1,4 @@
-# Rebus.TODO
+# Rebus.Protobuf
 
 Provides a Protobuf-based message serializer for [Rebus](https://github.com/rebus-org/Rebus).
 
