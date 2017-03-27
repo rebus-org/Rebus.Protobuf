@@ -1,5 +1,6 @@
 using System;
 using System.Linq.Expressions;
+using System.Reflection;
 
 namespace Rebus.Protobuf
 {
@@ -16,7 +17,11 @@ namespace Rebus.Protobuf
 
             foreach(var dot in dots)
             {
+#if NETSTANDARD1_6
+                var propertyInfo = obj.GetType().GetTypeInfo().GetProperty(dot);
+#else
                 var propertyInfo = obj.GetType().GetProperty(dot);
+#endif
                 if (propertyInfo == null) return null;
                 obj = propertyInfo.GetValue(obj, new object[0]);
                 if (obj == null) break;
