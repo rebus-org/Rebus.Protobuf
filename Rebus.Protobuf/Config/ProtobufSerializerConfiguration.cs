@@ -1,9 +1,9 @@
 ﻿using ProtoBuf;
 using ProtoBuf.Meta;
-using Rebus.Config;
+using Rebus.Protobuf;
 using Rebus.Serialization;
 
-namespace Rebus.Protobuf
+namespace Rebus.Config
 {
     /// <summary>
     /// Configuration extensions for the Rebus Protobuf serializer
