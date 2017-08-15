@@ -34,10 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Rebus.Protobuf\Rebus.Protobuf.csproj" />
-    <PackageReference Include="nunit" Version="3.6.1" />
+    <PackageReference Include="nunit" Version="3.7.1" />
     <PackageReference Include="protobuf-net" Version="2.1.0" />
-    <PackageReference Include="rebus" Version="4.0.0-b10" />
-    <PackageReference Include="rebus.tests.contracts" Version="4.0.0-b10" />
+    <PackageReference Include="rebus" Version="4.0.0" />
+    <PackageReference Include="rebus.tests.contracts" Version="4.0.0" />
   </ItemGroup>
   <ItemGroup>
     <None Update="azure_storage_connection_string.txt">
