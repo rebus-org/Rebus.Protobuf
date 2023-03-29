@@ -3,30 +3,29 @@ using Rebus.Serialization;
 using Rebus.Tests.Contracts.Serialization;
 using Rebus.Tests.Contracts.Serialization.Default;
 
-namespace Rebus.Protobuf.Tests
+namespace Rebus.Protobuf.Tests;
+
+public class ProtobufSerializerFactory : ISerializerFactory
 {
-    public class ProtobufSerializerFactory : ISerializerFactory
+    readonly RuntimeTypeModel _runtimeTypeModel;
+
+    public ProtobufSerializerFactory()
     {
-        readonly RuntimeTypeModel _runtimeTypeModel;
+        _runtimeTypeModel = RuntimeTypeModel.Create();
 
-        public ProtobufSerializerFactory()
-        {
-            _runtimeTypeModel = TypeModel.Create();
+        _runtimeTypeModel.Add(typeof (SomeMessage), true)
+            .Add(1, "Text");
 
-            _runtimeTypeModel.Add(typeof (SomeMessage), true)
-                .Add(1, "Text");
+        _runtimeTypeModel.Add(typeof (RootObject), true)
+            .Add(1, "BigObjects");
 
-            _runtimeTypeModel.Add(typeof (RootObject), true)
-                .Add(1, "BigObjects");
+        _runtimeTypeModel.Add(typeof (BigObject), true)
+            .Add(1, "Integer")
+            .Add(2, "String");
+    }
 
-            _runtimeTypeModel.Add(typeof (BigObject), true)
-                .Add(1, "Integer")
-                .Add(2, "String");
-        }
-
-        public ISerializer GetSerializer()
-        {
-            return new ProtobufSerializer(_runtimeTypeModel);
-        }
+    public ISerializer GetSerializer()
+    {
+        return new ProtobufSerializer(_runtimeTypeModel);
     }
 }
