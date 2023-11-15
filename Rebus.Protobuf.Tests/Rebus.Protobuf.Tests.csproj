@@ -5,10 +5,10 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Rebus.Protobuf\Rebus.Protobuf.csproj" />
-    <PackageReference Include="microsoft.net.test.sdk" Version="17.5.0" />
-    <PackageReference Include="nunit" Version="3.13.3" />
-    <PackageReference Include="nunit3testadapter" Version="4.4.2" />
-    <PackageReference Include="protobuf-net" Version="3.2.16" />
-    <PackageReference Include="rebus.tests.contracts" Version="8.0.0-alpha01" />
+    <PackageReference Include="microsoft.net.test.sdk" Version="17.8.0" />
+    <PackageReference Include="nunit" Version="3.14.0" />
+    <PackageReference Include="nunit3testadapter" Version="4.5.0" />
+    <PackageReference Include="protobuf-net" Version="3.2.26" />
+    <PackageReference Include="rebus.tests.contracts" Version="8.0.1" />
   </ItemGroup>
 </Project>
